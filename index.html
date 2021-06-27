@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <div class="menu">
+        <a class="button"><span></span></a>
+        <div class="menu-list">
+            <a href="index.html">Главная</a>
+            <a href="about.html">Инфо</a>
+            <a href="profile.html">Профиль</a>
+            <a href="" data-bs-toggle="modal" data-bs-target="#ModalLogin">Вход</a>
+            <a href="" data-bs-toggle="modal" data-bs-target="#ModalRegistration">Регистрация</a>
+            <div class="add-post" data-bs-toggle="modal" data-bs-target="#exampleModal">Опубликовать</div>
+            <div class="del-post" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</div>
+        </div>
+
+
+    </div>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Нажмите на публикацию в списке, чтобы удалить</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="deltitles">
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Новая публикация</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-title">
+                        <h5>Заголовок публикации</h5>
+                        <input type="text" class="modal-input-title" placeholder="Заголовок...">
+                    </div>
+                    <div class="modal-text">
+                        <h5>Текст публикации</h5>
+                        <textarea type="text" class="modal-input-text" placeholder="Текст..."></textarea>
+                    </div>
+                    <div class="modal-color">
+                        <h5>Цвет</h5>
+                        <div class="colors">
+                            <div id="blue" class="active-color"></div>
+                            <div id="black"></div>
+                            <div id="green"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                    <button type="button" class="btn btn-primary" id='newpost'>Опубликовать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="ModalButton"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Авторизация</h5>
+
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-group">
+                                <label for="InputEmail">Email адреса</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Введите почту">
+                            </div>
+                            <div class="form-group">
+                                <label for="InputPassword">Пароль</label>
+                                <input type="password" class="form-control" id="InputPassword1"
+                                    placeholder="Введите пароль">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="CheckEnter">
+                                <label class="form-check-label" for="CheckEnter">Запомнить меня</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Войти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="ModalRegistration" tabindex="-1" role="dialog" aria-labelledby="ModalRegistration"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabelReg">Регистрация</h5>
+
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-group">
+                                <label for="InputName">Имя</label>
+                                <input type="name" class="form-control" id="InputName" aria-describedby="nameHelp"
+                                    placeholder="Введите имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="InputSurname">Фамилия</label>
+                                <input type="surname" class="form-control" id="InputSurname"
+                                    aria-describedby="surnameHelp" placeholder="Введите фамилию">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDate">Дата рождения</label>
+                                <input type="date" class="form-control" id="InputDate" aria-describedby="dateHelp">
+                            </div>
+                            <div>
+                                <label for="inputSex">Пол</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Radios" id="manRadios"
+                                    value="option1" checked>
+                                <label class="form-check-label" for="manRadios">
+                                    Мужская
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Radios" id="womanRadios"
+                                    value="option2">
+                                <label class="form-check-label" for="womanRadios">
+                                    Женская
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputEmail">Email</label>
+                                <input type="email" class="form-control" id="InputEmail" placeholder="Введите email">
+                            </div>
+                            <div class="form-group">
+                                <label for="InputPassword1">Пароль</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Введите пароль">
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                    Пароль не менее 8 символов.
+                                </small>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Войти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+
+        <nav class="navbar">
+            <div class="container-fluid d-flex justify-content-center">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/logo.png" alt="" width="60" height="60" class="d-inline-block align-text-top">
+
+                </a>
+            </div>
+        </nav>
+
+        <div class="content">
+            <section class="black">
+                <h1>Пока-что постов нет =(</h1>
+            </section>
+
+        </div>
+    </div>
+    <script src="mvc/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
